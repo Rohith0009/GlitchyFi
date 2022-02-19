@@ -1,0 +1,56 @@
+#nav_buttons {
+  display: none;
+}
+
+#alert {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+}
+
+body {
+  background: linear-gradient(90deg, #68d9ff, #6cd67b);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.name {
+  font-size: 45px;
+  margin-top: 75px;
+  font-family: "Syne Tactile", cursive;
+}
+
+#name_logo {
+  width: 50px;
+}
+
+#logout {
+  background-color: red;
+  width: 150px;
+  color: white;
+}
+
+#notices {
+  background-color: limegreen;
+  width: 150px;
+  color: black;
+}
+
+#back {
+  background-color: red;
+  width: 150px;
+  color: white;
+}
+
+#report {
+  background-color: red;
+  width: 150px;
+  color: white;
+}
+
+#contact {
+  background-color: yellow;
+  width: 150px;
+  color: black;
+}
