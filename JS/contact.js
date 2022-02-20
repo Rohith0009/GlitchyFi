@@ -22,15 +22,16 @@ function send() {
   msg = document.getElementById("message_input").value;
   if (msg == "") {
     document.getElementById("alert").innerHTML = "<div class='alert alert-danger alert-dismissible fade show'><button type='button' class='btn-close' data-bs-dismiss='alert'></button><strong> The Query Cannot Be Empty!</strong></div></div>";
+  } else {
+    firebase
+      .database()
+      .ref("/Contact/" + full_name_chat)
+      .push({
+        user: full_name,
+        message: msg,
+      });
+    document.getElementById("message_input").value = "";
   }
-  firebase
-    .database()
-    .ref("/Contact/" + full_name_chat)
-    .push({
-      user: full_name,
-      message: msg,
-    });
-  document.getElementById("message_input").value = "";
 }
 
 function getData() {

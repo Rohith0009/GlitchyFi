@@ -2,22 +2,15 @@
   display: none;
 }
 
-#alert {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 9999;
-}
-
 body {
-  background: linear-gradient(90deg, #68d9ff, #6cd67b);
+  background: linear-gradient(90deg,#00f5a0,#00d9f5);
   max-width: 100%;
   overflow-x: hidden;
 }
 
 .name {
   font-size: 45px;
-  margin-top: 75px;
+  margin-top: 20px;
   font-family: "Syne Tactile", cursive;
 }
 
