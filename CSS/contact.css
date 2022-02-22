@@ -17,9 +17,12 @@
   width: 100%;
 }
 
+#nav_buttons{
+  margin-bottom: 25%;
+}
+  
 #send {
   width: 20%;
-  margin-bottom: 5px;
 }
 
 #message_input {

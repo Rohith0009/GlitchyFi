@@ -22,23 +22,29 @@ function submit() {
   website_url = document.getElementById("website_url").value;
   title = document.getElementById("title").value;
   description = document.getElementById("description").value;
-  firebase
-    .database()
-    .ref("/Websites/" + website_name)
-    .push({
-      website_name: website_name,
-      website_url: website_url,
-      title: title,
-      description: description,
-      status: "Unresolved",
-      user: full_name,
-    });
-  document.getElementById("alert").innerHTML =
-    "<div class='alert alert-danger alert-dismissible fade show'><button type='button' class='btn-close' data-bs-dismiss='alert'></button><strong> Successfully Reported </strong>Waiting For The Developer To Resolve It</div></div>";
-  document.getElementById("website_name").value = "";
-  document.getElementById("website_url").value = "";
-  document.getElementById("title").value = "";
-  document.getElementById("description").value = "";
+
+  if ((website_name == "", website_url == "", title == "", description == "")) {
+    document.getElementById("alert").innerHTML =
+      "<div class='alert alert-danger alert-dismissible fade show'><button type='button' class='btn-close' data-bs-dismiss='alert'></button><strong> All Fields Are Required To Be Filled</strong></div></div>";
+  } else {
+    firebase
+      .database()
+      .ref("/Websites/" + website_name)
+      .push({
+        website_name: website_name,
+        website_url: website_url,
+        title: title,
+        description: description,
+        status: "Unresolved",
+        user: full_name,
+      });
+    document.getElementById("alert").innerHTML =
+      "<div class='alert alert-danger alert-dismissible fade show'><button type='button' class='btn-close' data-bs-dismiss='alert'></button><strong> Successfully Reported </strong>Waiting For The Developer To Resolve It</div></div>";
+    document.getElementById("website_name").value = "";
+    document.getElementById("website_url").value = "";
+    document.getElementById("title").value = "";
+    document.getElementById("description").value = "";
+  }
 }
 
 //Navigation Buttons code

@@ -8,7 +8,6 @@ body {
 
 .name {
   font-size: 45px;
-
   font-family: "Syne Tactile", cursive;
 }
 
@@ -26,6 +25,7 @@ body {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
   padding: 10px;
+  margin-bottom: 90px;
 }
 
 .glitch_message_part {

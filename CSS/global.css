@@ -1,9 +1,14 @@
 #nav_buttons {
-  display: none;
+  position: fixed;
+  bottom: 0px;
+}
+
+#nav_buttons button {
+  border-bottom-left-radius: 0px;
 }
 
 body {
-  background: linear-gradient(90deg,#00f5a0,#00d9f5);
+  background: linear-gradient(90deg, #00f5a0, #00d9f5);
   max-width: 100%;
   overflow-x: hidden;
 }

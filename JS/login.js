@@ -19,11 +19,24 @@ function login() {
 
   //Space To Get The Actual Password in "actual_pass" Variable
   //firebase.database().ref("/Emails/" + valid_email);
+  function getData() {
+    firebase
+      .database()
+      .ref("/Emails/" + valid_email)
+      .on("value", function (snapshot) {
+        snapshot.forEach(function (childSnapshot) {
+          Emails = childSnapshot.key;
+          Password = Emails;
+
+        });
+      });
+  }
+  getData();
 
   if ((full_name == "", email == "", password == "")) {
     document.getElementById("alert").innerHTML =
       "<div class='alert alert-danger alert-dismissible fade show'><button type='button' class='btn-close' data-bs-dismiss='alert'></button><strong> All Fields Are Required To Be Filled</strong></div></div>";
-  } else if (actual_pass == password) {
+  } else {
     localStorage.setItem("full_name", full_name);
     localStorage.setItem("email", email);
     localStorage.setItem("password", password);
@@ -31,9 +44,6 @@ function login() {
     document.getElementById("email").innerHTML = " ";
     document.getElementById("password").innerHTML = " ";
     window.location = "Main.html";
-  } else if (actual_pass != password) {
-    document.getElementById("alert").innerHTML =
-      "<div class='alert alert-danger alert-dismissible fade show'><button type='button' class='btn-close' data-bs-dismiss='alert'></button><strong> Incorrect Password Please Check You Email Or Password</strong></div></div>";
   }
 }
 
